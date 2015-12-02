@@ -1,0 +1,13 @@
+.container-fluid
+  .row
+    .col-md-4.col-md-offset-4
+      %h2= @user.username
+      %h3
+        %strong Lost Games
+        = @user.losers.count
+      %h4
+        %strong Total Games
+        = @user.games.count
+      %h4
+        %strong Lost Percentage
+        = @user.games.count > 0 ? '%.2f' % (@user.losers.count / @user.games.count.to_f) : 'N/A'
